@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" Namespace="LightSwitchApplication" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="AssociatedRisk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RiskDescription" Type="Edm.String" Nullable="false" MaxLength="500" />
+    <Property Name="DateRaised" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="RiskLikelihood" Type="Edm.Int32" />
+    <Property Name="RiskImpact" Type="Edm.Int32" />
+    <Property Name="TargetDate" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="RiskAssessment_Employee" Type="Edm.Int32" />
+    <Property Name="ControlMeasures" Type="Edm.String" MaxLength="Max" />
+    <Property Name="DateCompleted" Type="Edm.DateTime" />
+    <Property Name="ChangeRequest_AssociatedRisk" Type="Edm.Int32" Nullable="false" />
+    <Property Name="OverallRisk" Type="Edm.Int32" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="AssignedTo" Relationship="LightSwitchApplication.AssociatedRisk_Employee" ToRole="Employee" FromRole="AssociatedRisk" />
+    <NavigationProperty Name="ChangeRequest" Relationship="LightSwitchApplication.ChangeRequest_AssociatedRisk" ToRole="ChangeRequest" FromRole="AssociatedRisk" />
+  </EntityType>
+  <EntityType Name="ChangeQualificationAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChangeQualificationAction_ChangeQualification" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ActionRequired" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="ChangeQualificationAction_Employee" Type="Edm.Int32" />
+    <Property Name="DateActionAssigned" Type="Edm.DateTime" />
+    <Property Name="TargetActionCompletionDate" Type="Edm.DateTime" />
+    <Property Name="ActionTaken" Type="Edm.String" MaxLength="Max" />
+    <Property Name="DateActionCompleted" Type="Edm.DateTime" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ChangeQualification" Relationship="LightSwitchApplication.ChangeQualificationAction_ChangeQualification" ToRole="ChangeQualification" FromRole="ChangeQualificationAction" />
+    <NavigationProperty Name="ActionAssignedTo" Relationship="LightSwitchApplication.ChangeQualificationAction_Employee" ToRole="Employee" FromRole="ChangeQualificationAction" />
+  </EntityType>
+  <EntityType Name="ChangeQualification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChangeQualification_ChangeRequest" Type="Edm.Int32" Nullable="false" />
+    <Property Name="QualificationType" Type="Edm.String" Nullable="false" MaxLength="2" />
+    <Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="Max" />
+    <Property Name="ChangeQualification_Employee1" Type="Edm.Int32" Nullable="false" />
+    <Property Name="StartDate" Type="Edm.DateTime" />
+    <Property Name="TargetCompletionDate" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="DateClosed" Type="Edm.DateTime" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ChangeRequest" Relationship="LightSwitchApplication.ChangeQualification_ChangeRequest" ToRole="ChangeRequest" FromRole="ChangeQualification" />
+    <NavigationProperty Name="AssignedTo" Relationship="LightSwitchApplication.ChangeQualification_Employee1" ToRole="Employee" FromRole="ChangeQualification" />
+    <NavigationProperty Name="ChangeQualificationActions" Relationship="LightSwitchApplication.ChangeQualificationAction_ChangeQualification" ToRole="ChangeQualificationAction" FromRole="ChangeQualification" />
+  </EntityType>
+  <EntityType Name="ChangeRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reference" Type="Edm.String" Nullable="false" MaxLength="50" />
+    <Property Name="ChangeRequestTitle" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="ChangeRequestDescription" Type="Edm.String" Nullable="false" MaxLength="Max" />
+    <Property Name="ChangeRequest_Employee" Type="Edm.Int32" Nullable="false" />
+    <Property Name="DateRaised" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="TargetClosureDate" Type="Edm.DateTime" Nullable="false" />
+    <Property Name="ChangeRequestStatus_ChangeRequest" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ChangeRequestPlan" Type="Edm.String" MaxLength="Max" />
+    <Property Name="ChangeRequest_Employee2" Type="Edm.Int32" Nullable="false" />
+    <Property Name="DateApproved" Type="Edm.DateTime" />
+    <Property Name="DateClosed" Type="Edm.DateTime" />
+    <Property Name="ChangeRequest_Employee1" Type="Edm.Int32" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="RaisedBy" Relationship="LightSwitchApplication.ChangeRequest_Employee" ToRole="Employee" FromRole="ChangeRequest" />
+    <NavigationProperty Name="ChangeRequestStatus" Relationship="LightSwitchApplication.ChangeRequestStatus_ChangeRequest" ToRole="ChangeRequestStatus" FromRole="ChangeRequest" />
+    <NavigationProperty Name="ChangeOwner" Relationship="LightSwitchApplication.ChangeRequest_Employee2" ToRole="Employee" FromRole="ChangeRequest" />
+    <NavigationProperty Name="ClosedBy" Relationship="LightSwitchApplication.ChangeRequest_Employee1" ToRole="Employee" FromRole="ChangeRequest" />
+    <NavigationProperty Name="ChangeQualifications" Relationship="LightSwitchApplication.ChangeQualification_ChangeRequest" ToRole="ChangeQualification" FromRole="ChangeRequest" />
+    <NavigationProperty Name="AssociatedRisks" Relationship="LightSwitchApplication.ChangeRequest_AssociatedRisk" ToRole="AssociatedRisk" FromRole="ChangeRequest" />
+  </EntityType>
+  <EntityType Name="ChangeRequestStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="100" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ChangeRequests" Relationship="LightSwitchApplication.ChangeRequestStatus_ChangeRequest" ToRole="ChangeRequest" FromRole="ChangeRequestStatus" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="75" />
+    <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="75" />
+    <Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="75" />
+    <Property Name="Email" Type="Edm.String" Nullable="false" MaxLength="255" />
+    <Property Name="Current" Type="Edm.Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Created" Type="Edm.DateTimeOffset" />
+    <Property Name="ModifiedBy" Type="Edm.String" MaxLength="255" />
+    <Property Name="Modified" Type="Edm.DateTimeOffset" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="ChangeRequestsRaisedBy" Relationship="LightSwitchApplication.ChangeRequest_Employee" ToRole="ChangeRequest" FromRole="Employee" />
+    <NavigationProperty Name="ChangeRequestsClosedBy" Relationship="LightSwitchApplication.ChangeRequest_Employee1" ToRole="ChangeRequest" FromRole="Employee" />
+    <NavigationProperty Name="ChangeRequestsChangeOwner" Relationship="LightSwitchApplication.ChangeRequest_Employee2" ToRole="ChangeRequest" FromRole="Employee" />
+    <NavigationProperty Name="AssociatedRisk" Relationship="LightSwitchApplication.AssociatedRisk_Employee" ToRole="AssociatedRisk" FromRole="Employee" />
+    <NavigationProperty Name="ChangeQualificationActions" Relationship="LightSwitchApplication.ChangeQualificationAction_Employee" ToRole="ChangeQualificationAction" FromRole="Employee" />
+    <NavigationProperty Name="ChangeQualifications" Relationship="LightSwitchApplication.ChangeQualification_Employee1" ToRole="ChangeQualification" FromRole="Employee" />
+  </EntityType>
+  <Association Name="ChangeQualificationAction_ChangeQualification">
+    <End Role="ChangeQualification" Type="LightSwitchApplication.ChangeQualification" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChangeQualificationAction" Type="LightSwitchApplication.ChangeQualificationAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChangeQualification">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeQualificationAction">
+        <PropertyRef Name="ChangeQualificationAction_ChangeQualification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeQualification_ChangeRequest">
+    <End Role="ChangeRequest" Type="LightSwitchApplication.ChangeRequest" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChangeQualification" Type="LightSwitchApplication.ChangeQualification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChangeRequest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeQualification">
+        <PropertyRef Name="ChangeQualification_ChangeRequest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequest_AssociatedRisk">
+    <End Role="ChangeRequest" Type="LightSwitchApplication.ChangeRequest" Multiplicity="1" />
+    <End Role="AssociatedRisk" Type="LightSwitchApplication.AssociatedRisk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChangeRequest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssociatedRisk">
+        <PropertyRef Name="ChangeRequest_AssociatedRisk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequestStatus_ChangeRequest">
+    <End Role="ChangeRequestStatus" Type="LightSwitchApplication.ChangeRequestStatus" Multiplicity="1" />
+    <End Role="ChangeRequest" Type="LightSwitchApplication.ChangeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChangeRequestStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeRequest">
+        <PropertyRef Name="ChangeRequestStatus_ChangeRequest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequest_Employee">
+    <End Role="Employee" Type="LightSwitchApplication.Employee" Multiplicity="1" />
+    <End Role="ChangeRequest" Type="LightSwitchApplication.ChangeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeRequest">
+        <PropertyRef Name="ChangeRequest_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequest_Employee1">
+    <End Role="Employee" Type="LightSwitchApplication.Employee" Multiplicity="0..1" />
+    <End Role="ChangeRequest" Type="LightSwitchApplication.ChangeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeRequest">
+        <PropertyRef Name="ChangeRequest_Employee1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequest_Employee2">
+    <End Role="Employee" Type="LightSwitchApplication.Employee" Multiplicity="1" />
+    <End Role="ChangeRequest" Type="LightSwitchApplication.ChangeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeRequest">
+        <PropertyRef Name="ChangeRequest_Employee2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AssociatedRisk_Employee">
+    <End Role="Employee" Type="LightSwitchApplication.Employee" Multiplicity="0..1" />
+    <End Role="AssociatedRisk" Type="LightSwitchApplication.AssociatedRisk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssociatedRisk">
+        <PropertyRef Name="RiskAssessment_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeQualificationAction_Employee">
+    <End Role="Employee" Type="LightSwitchApplication.Employee" Multiplicity="0..1" />
+    <End Role="ChangeQualificationAction" Type="LightSwitchApplication.ChangeQualificationAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeQualificationAction">
+        <PropertyRef Name="ChangeQualificationAction_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeQualification_Employee1">
+    <End Role="Employee" Type="LightSwitchApplication.Employee" Multiplicity="1" />
+    <End Role="ChangeQualification" Type="LightSwitchApplication.ChangeQualification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeQualification">
+        <PropertyRef Name="ChangeQualification_Employee1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ApplicationData" m:IsDefaultEntityContainer="true">
+    <EntitySet Name="AssociatedRisks" EntityType="LightSwitchApplication.AssociatedRisk" />
+    <EntitySet Name="ChangeQualificationActions" EntityType="LightSwitchApplication.ChangeQualificationAction" />
+    <EntitySet Name="ChangeQualifications" EntityType="LightSwitchApplication.ChangeQualification" />
+    <EntitySet Name="ChangeRequests" EntityType="LightSwitchApplication.ChangeRequest" />
+    <EntitySet Name="ChangeRequestStatuses" EntityType="LightSwitchApplication.ChangeRequestStatus" />
+    <EntitySet Name="Employees" EntityType="LightSwitchApplication.Employee" />
+    <AssociationSet Name="ChangeQualificationAction_ChangeQualification" Association="LightSwitchApplication.ChangeQualificationAction_ChangeQualification">
+      <End Role="ChangeQualification" EntitySet="ChangeQualifications" />
+      <End Role="ChangeQualificationAction" EntitySet="ChangeQualificationActions" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeQualification_ChangeRequest" Association="LightSwitchApplication.ChangeQualification_ChangeRequest">
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+      <End Role="ChangeQualification" EntitySet="ChangeQualifications" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequest_AssociatedRisk" Association="LightSwitchApplication.ChangeRequest_AssociatedRisk">
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+      <End Role="AssociatedRisk" EntitySet="AssociatedRisks" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequestStatus_ChangeRequest" Association="LightSwitchApplication.ChangeRequestStatus_ChangeRequest">
+      <End Role="ChangeRequestStatus" EntitySet="ChangeRequestStatuses" />
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequest_Employee" Association="LightSwitchApplication.ChangeRequest_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequest_Employee1" Association="LightSwitchApplication.ChangeRequest_Employee1">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequest_Employee2" Association="LightSwitchApplication.ChangeRequest_Employee2">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+    </AssociationSet>
+    <AssociationSet Name="AssociatedRisk_Employee" Association="LightSwitchApplication.AssociatedRisk_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="AssociatedRisk" EntitySet="AssociatedRisks" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeQualificationAction_Employee" Association="LightSwitchApplication.ChangeQualificationAction_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeQualificationAction" EntitySet="ChangeQualificationActions" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeQualification_Employee1" Association="LightSwitchApplication.ChangeQualification_Employee1">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeQualification" EntitySet="ChangeQualifications" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

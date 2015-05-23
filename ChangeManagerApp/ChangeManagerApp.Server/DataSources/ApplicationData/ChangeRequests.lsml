@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="ChangeRequest">
+    <EntityType.Attributes>
+      <CreatedModifiedPropertiesEnabled />
+    </EntityType.Attributes>
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="Reference"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ChangeRequestTitle"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="100" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ChangeRequestDescription"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="RaisedBy"
+        Association="ChangeRequest_Employee"
+        FromEnd="ChangeRequest"
+        ToEnd="Employee" />
+      <EntityProperty
+        Name="DateRaised"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="TargetClosureDate"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ChangeRequestStatus"
+        Association="ChangeRequestStatus_ChangeRequest"
+        FromEnd="ChangeRequest"
+        ToEnd="ChangeRequestStatus" />
+      <EntityProperty
+        Name="ChangeRequestPlan"
+        PropertyType=":String?" />
+      <NavigationProperty
+        Name="ChangeOwner"
+        Association="ChangeRequest_Employee2"
+        FromEnd="ChangeRequest"
+        ToEnd="Employee" />
+      <EntityProperty
+        Name="DateApproved"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DateClosed"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="ClosedBy"
+        Association="ChangeRequest_Employee1"
+        FromEnd="ChangeRequest"
+        ToEnd="Employee" />
+      <NavigationProperty
+        Name="ChangeQualifications"
+        Association="ChangeQualification_ChangeRequest"
+        FromEnd="ChangeRequest"
+        ToEnd="ChangeQualification" />
+      <NavigationProperty
+        Name="AssociatedRisks"
+        Association="ChangeRequest_AssociatedRisk"
+        FromEnd="ChangeRequest"
+        ToEnd="AssociatedRisk" />
+      <EntityProperty
+        Name="CreatedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Created"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ModifiedBy"
+        IsReadOnly="True"
+        PropertyType=":Person?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Modified"
+        IsReadOnly="True"
+        PropertyType=":DateTimeOffset?">
+        <EntityProperty.Attributes>
+          <Generated />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityContainer
+    Name="ApplicationData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="ChangeRequests"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="ChangeRequest" />
+    <QueryOperation
+      Name="ChangeRequests_Single"
+      ReturnType="ChangeRequest">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s)." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ChangeRequests" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="ChangeRequests_SingleOrDefault"
+      ReturnType="ChangeRequest">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Returns the entity whose identity is specified by the parameter(s) or null if no such entity exists." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="ChangeRequests" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="The value of the 'Id' key property of the entity to retrieve." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <AssociationSet
+      Name="ChangeQualification_ChangeRequests"
+      Association="ChangeQualification_ChangeRequest">
+      <AssociationSetEnd
+        Name="ChangeQualification"
+        EntitySet="ChangeQualifications" />
+      <AssociationSetEnd
+        Name="ChangeRequest"
+        EntitySet="ChangeRequests" />
+    </AssociationSet>
+    <AssociationSet
+      Name="ChangeRequest_AssociatedRisks"
+      Association="ChangeRequest_AssociatedRisk">
+      <AssociationSetEnd
+        Name="ChangeRequest"
+        EntitySet="ChangeRequests" />
+      <AssociationSetEnd
+        Name="AssociatedRisk"
+        EntitySet="AssociatedRisks" />
+    </AssociationSet>
+  </EntityContainer>
+  <DataService
+    Name="ApplicationDataMapping">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="ChangeRequests">
+      <EntitySetMapping.Attributes>
+        <SsdlForeignKeyProperty
+          Name="ChangeRequest_Employee"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="ChangeRequest_Employee1"
+          Nullable="True"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="ChangeRequest_Employee2"
+          Nullable="False"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="ChangeRequestStatus_ChangeRequest"
+          Nullable="False"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="ChangeQualification_ChangeRequests">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ChangeQualification_ChangeRequests" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[ChangeQualification_ChangeRequests]/Members[ChangeQualification]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ChangeQualification_ChangeRequest" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[ChangeQualification_ChangeRequests]/Members[ChangeRequest]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="ChangeRequest_AssociatedRisks">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="ChangeRequest_AssociatedRisks" />
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[ChangeRequest_AssociatedRisks]/Members[ChangeRequest]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="Id" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="ApplicationData/Members[ChangeRequest_AssociatedRisks]/Members[AssociatedRisk]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="ChangeRequest_AssociatedRisk" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+  <Association
+    Name="ChangeQualification_ChangeRequest">
+    <AssociationEnd
+      Name="ChangeQualification"
+      Multiplicity="Many"
+      EntityType="ChangeQualification" />
+    <AssociationEnd
+      Name="ChangeRequest"
+      Multiplicity="One"
+      EntityType="ChangeRequest">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
+  <Association
+    Name="ChangeRequest_AssociatedRisk">
+    <AssociationEnd
+      Name="ChangeRequest"
+      Multiplicity="One"
+      EntityType="ChangeRequest">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Restrict" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="AssociatedRisk"
+      Multiplicity="Many"
+      EntityType="AssociatedRisk" />
+  </Association>
+</ServiceApplication>

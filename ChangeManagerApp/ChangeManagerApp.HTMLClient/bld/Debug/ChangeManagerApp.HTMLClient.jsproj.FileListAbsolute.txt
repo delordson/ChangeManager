@@ -1,0 +1,6 @@
+C:\Users\delordsonadmin\Documents\Visual Studio 2013\Projects\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Debug\LSResourceGeneratorsTask.mcs
+C:\Users\delordsonadmin\Documents\Visual Studio 2013\Projects\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs
+C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Debug\LSResourceGeneratorsTask.mcs
+C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs
+C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Debug\LSResourceGeneratorsTask.mcs
+C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Debug\LSClientCodeGeneratorsTask.mcs

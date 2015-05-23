@@ -1,0 +1,12 @@
+ChangeManagerApp.Server.Properties.Service.lsml
+ChangeManagerApp.Server.Properties.DataSources.ApplicationData.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.ChangeRequests.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.Employees.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.ChangeRequestStatuses.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.AssociatedRisks.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.ChangeQualifications.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.ChangeQualificationActions.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.MyChangeRequests.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.MyChangeQualifications.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.MyChangeQualificationActions.lsml
+ChangeManagerApp.Server.DataSources.ApplicationData.MyAssignedRisks.lsml

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\AssociatedRisks.lsml" Checksum="4B5E949D881662983F025F87C721B24E4CEFF3B617320B3941A6C3D96E55DBA3" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\MyAssignedRisks.lsml" Checksum="0E440DD36C9F239CF0BC44EC7DD6F9149060AE09AE57A441BDB76A9034C412F7" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\ChangeQualificationActions.lsml" Checksum="FEED3C0307DD3FA34A1E16A97B46DD7B7C097B27D95E60DF03D86EB82F9B5402" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\MyChangeQualificationActions.lsml" Checksum="1C9C3E48B81B7F4E37A16A62918EEC0692CD4D447C5394BB093D5B1D52DB530F" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\ChangeQualifications.lsml" Checksum="F69F39B6B40E75B22AF4A7ECBC3574F5923E618BEA75782E2B8AD344934153DC" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\MyChangeQualifications.lsml" Checksum="DC81CC2E9C0F1606F384123EEC7FAB05CC1A9B355DB7ED23231187982860CC55" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\ChangeRequests.lsml" Checksum="EA6FD43EBF81D1C1305CA43C4BD6F2AA6385FF6519F4C0B1BF21CF06D97A1ADB" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\MyChangeRequests.lsml" Checksum="0F21731EC65D5D9350EF6F451A11EDC6CC3F3283B410D6512E7EEADBBC3A7B35" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\ChangeRequestStatuses.lsml" Checksum="E250A0972C96BEC75D8FCAAAD20F349AD78E310D058364CBD6B8F776B30FBBE4" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\DataSources\ApplicationData\Employees.lsml" Checksum="65A8C20606AC395ED89C00C2805701A2CD01C087EB7C9C433A7C87E6135A665D" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\Properties\DataSources\ApplicationData.lsml" Checksum="4269B7A1C607D3AEA1D34BA816EE24BE223A014F83A97F863157835AA09C6154" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.Server\Properties\Service.lsml" Checksum="B4E134CAFE3FA08FD5C04AE3FEAF5027BAE8A92BC9AB06E4BC7FBDF788C81148" />
+  </Documents>
+</ModelDocumentManifest>

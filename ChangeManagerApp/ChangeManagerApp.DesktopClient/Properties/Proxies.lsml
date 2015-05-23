@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+  Name="LightSwitchApplication.ChangeManagerApp.DesktopClient" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <Application.Attributes>
+    <Partial />
+  </Application.Attributes>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:AssociatedRisk" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeQualificationAction" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeQualification" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeRequest" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeRequestStatus" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:Employee" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityContainer
+    Name="ApplicationData">
+    <EntityContainer.Attributes>
+      <Proxy
+        Target="ServiceInterface:ApplicationData" />
+    </EntityContainer.Attributes>
+  </EntityContainer>
+  <Association
+    Name="ChangeQualificationAction_ChangeQualification">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeQualificationAction_ChangeQualification" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="ChangeQualification_ChangeRequest">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeQualification_ChangeRequest" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="ChangeRequest_AssociatedRisk">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeRequest_AssociatedRisk" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="ChangeRequestStatus_ChangeRequest">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeRequestStatus_ChangeRequest" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="ChangeRequest_Employee">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeRequest_Employee" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="ChangeRequest_Employee1">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeRequest_Employee1" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="ChangeRequest_Employee2">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeRequest_Employee2" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="AssociatedRisk_Employee">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:AssociatedRisk_Employee" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="ChangeQualificationAction_Employee">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeQualificationAction_Employee" />
+    </Association.Attributes>
+  </Association>
+  <Association
+    Name="ChangeQualification_Employee1">
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:ChangeQualification_Employee1" />
+    </Association.Attributes>
+  </Association>
+</Application>

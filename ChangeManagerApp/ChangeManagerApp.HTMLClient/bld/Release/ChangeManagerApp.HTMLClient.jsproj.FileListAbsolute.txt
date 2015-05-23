@@ -1,0 +1,4 @@
+C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Release\LSResourceGeneratorsTask.mcs
+C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Release\LSClientCodeGeneratorsTask.mcs
+C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Release\LSResourceGeneratorsTask.mcs
+C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\bin\Release\LSClientCodeGeneratorsTask.mcs

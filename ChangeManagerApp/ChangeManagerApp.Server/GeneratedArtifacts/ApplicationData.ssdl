@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="AssociatedRisks" EntityType="ApplicationDataStore.AssociatedRisk" store:Type="Tables" Schema="dbo" Table="AssociatedRisks" />
+    <EntitySet Name="ChangeQualificationActions" EntityType="ApplicationDataStore.ChangeQualificationAction" store:Type="Tables" Schema="dbo" Table="ChangeQualificationActions" />
+    <EntitySet Name="ChangeQualifications" EntityType="ApplicationDataStore.ChangeQualification" store:Type="Tables" Schema="dbo" Table="ChangeQualifications" />
+    <EntitySet Name="ChangeRequests" EntityType="ApplicationDataStore.ChangeRequest" store:Type="Tables" Schema="dbo" Table="ChangeRequests" />
+    <EntitySet Name="ChangeRequestStatuses" EntityType="ApplicationDataStore.ChangeRequestStatus" store:Type="Tables" Schema="dbo" Table="ChangeRequestStatuses" />
+    <EntitySet Name="Employees" EntityType="ApplicationDataStore.Employee" store:Type="Tables" Schema="dbo" Table="Employees" />
+    <AssociationSet Name="ChangeQualificationAction_ChangeQualification" Association="ApplicationDataStore.ChangeQualificationAction_ChangeQualification">
+      <End Role="ChangeQualification" EntitySet="ChangeQualifications" />
+      <End Role="ChangeQualificationAction" EntitySet="ChangeQualificationActions" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeQualification_ChangeRequest" Association="ApplicationDataStore.ChangeQualification_ChangeRequest">
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+      <End Role="ChangeQualification" EntitySet="ChangeQualifications" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequest_AssociatedRisk" Association="ApplicationDataStore.ChangeRequest_AssociatedRisk">
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+      <End Role="AssociatedRisk" EntitySet="AssociatedRisks" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequestStatus_ChangeRequest" Association="ApplicationDataStore.ChangeRequestStatus_ChangeRequest">
+      <End Role="ChangeRequestStatus" EntitySet="ChangeRequestStatuses" />
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequest_Employee" Association="ApplicationDataStore.ChangeRequest_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequest_Employee1" Association="ApplicationDataStore.ChangeRequest_Employee1">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeRequest_Employee2" Association="ApplicationDataStore.ChangeRequest_Employee2">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeRequest" EntitySet="ChangeRequests" />
+    </AssociationSet>
+    <AssociationSet Name="AssociatedRisk_Employee" Association="ApplicationDataStore.AssociatedRisk_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="AssociatedRisk" EntitySet="AssociatedRisks" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeQualificationAction_Employee" Association="ApplicationDataStore.ChangeQualificationAction_Employee">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeQualificationAction" EntitySet="ChangeQualificationActions" />
+    </AssociationSet>
+    <AssociationSet Name="ChangeQualification_Employee1" Association="ApplicationDataStore.ChangeQualification_Employee1">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ChangeQualification" EntitySet="ChangeQualifications" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AssociatedRisk">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RiskDescription" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="DateRaised" Type="datetime" Nullable="false" />
+    <Property Name="RiskLikelihood" Type="int" />
+    <Property Name="RiskImpact" Type="int" />
+    <Property Name="TargetDate" Type="datetime" Nullable="false" />
+    <Property Name="ControlMeasures" Type="nvarchar(max)" />
+    <Property Name="DateCompleted" Type="datetime" />
+    <Property Name="OverallRisk" Type="int" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ChangeRequest_AssociatedRisk" Type="int" Nullable="false" />
+    <Property Name="RiskAssessment_Employee" Type="int" />
+  </EntityType>
+  <EntityType Name="ChangeQualificationAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ActionRequired" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="DateActionAssigned" Type="datetime" />
+    <Property Name="TargetActionCompletionDate" Type="datetime" />
+    <Property Name="ActionTaken" Type="nvarchar(max)" />
+    <Property Name="DateActionCompleted" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ChangeQualificationAction_ChangeQualification" Type="int" Nullable="false" />
+    <Property Name="ChangeQualificationAction_Employee" Type="int" />
+  </EntityType>
+  <EntityType Name="ChangeQualification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="QualificationType" Type="nvarchar" Nullable="false" MaxLength="2">
+      <UniqueIndexAnnotation xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </Property>
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="TargetCompletionDate" Type="datetime" Nullable="false" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ChangeQualification_ChangeRequest" Type="int" Nullable="false" />
+    <Property Name="ChangeQualification_Employee1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChangeRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Reference" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ChangeRequestTitle" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ChangeRequestDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateRaised" Type="datetime" Nullable="false" />
+    <Property Name="TargetClosureDate" Type="datetime" Nullable="false" />
+    <Property Name="ChangeRequestPlan" Type="nvarchar(max)" />
+    <Property Name="DateApproved" Type="datetime" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="ChangeRequestStatus_ChangeRequest" Type="int" Nullable="false" />
+    <Property Name="ChangeRequest_Employee" Type="int" Nullable="false" />
+    <Property Name="ChangeRequest_Employee1" Type="int" />
+    <Property Name="ChangeRequest_Employee2" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChangeRequestStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="75" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="75" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="75">
+      <UniqueIndexAnnotation xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </Property>
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Current" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Created" Type="datetimeoffset" />
+    <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+    <Property Name="Modified" Type="datetimeoffset" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <Association Name="ChangeQualificationAction_ChangeQualification">
+    <End Role="ChangeQualification" Type="ApplicationDataStore.ChangeQualification" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChangeQualificationAction" Type="ApplicationDataStore.ChangeQualificationAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChangeQualification">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeQualificationAction">
+        <PropertyRef Name="ChangeQualificationAction_ChangeQualification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeQualification_ChangeRequest">
+    <End Role="ChangeRequest" Type="ApplicationDataStore.ChangeRequest" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChangeQualification" Type="ApplicationDataStore.ChangeQualification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChangeRequest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeQualification">
+        <PropertyRef Name="ChangeQualification_ChangeRequest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequest_AssociatedRisk">
+    <End Role="ChangeRequest" Type="ApplicationDataStore.ChangeRequest" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="AssociatedRisk" Type="ApplicationDataStore.AssociatedRisk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChangeRequest">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssociatedRisk">
+        <PropertyRef Name="ChangeRequest_AssociatedRisk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequestStatus_ChangeRequest">
+    <End Role="ChangeRequestStatus" Type="ApplicationDataStore.ChangeRequestStatus" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ChangeRequest" Type="ApplicationDataStore.ChangeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChangeRequestStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeRequest">
+        <PropertyRef Name="ChangeRequestStatus_ChangeRequest" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequest_Employee">
+    <End Role="Employee" Type="ApplicationDataStore.Employee" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ChangeRequest" Type="ApplicationDataStore.ChangeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeRequest">
+        <PropertyRef Name="ChangeRequest_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequest_Employee1">
+    <End Role="Employee" Type="ApplicationDataStore.Employee" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ChangeRequest" Type="ApplicationDataStore.ChangeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeRequest">
+        <PropertyRef Name="ChangeRequest_Employee1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeRequest_Employee2">
+    <End Role="Employee" Type="ApplicationDataStore.Employee" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ChangeRequest" Type="ApplicationDataStore.ChangeRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeRequest">
+        <PropertyRef Name="ChangeRequest_Employee2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AssociatedRisk_Employee">
+    <End Role="Employee" Type="ApplicationDataStore.Employee" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="AssociatedRisk" Type="ApplicationDataStore.AssociatedRisk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssociatedRisk">
+        <PropertyRef Name="RiskAssessment_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeQualificationAction_Employee">
+    <End Role="Employee" Type="ApplicationDataStore.Employee" Multiplicity="0..1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ChangeQualificationAction" Type="ApplicationDataStore.ChangeQualificationAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeQualificationAction">
+        <PropertyRef Name="ChangeQualificationAction_Employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChangeQualification_Employee1">
+    <End Role="Employee" Type="ApplicationDataStore.Employee" Multiplicity="1">
+      <OnDeleteAnnotation Action="Restrict" xmlns="http://schemas.microsoft.com/LightSwitch/2013/edm/annotations" />
+    </End>
+    <End Role="ChangeQualification" Type="ApplicationDataStore.ChangeQualification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChangeQualification">
+        <PropertyRef Name="ChangeQualification_Employee1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.DesktopClient\Properties\Client.lsml" Checksum="3326FFC4FF6B8605B25E292B4F8307DFD7DD074701269551F33397CF1155DBB0" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.DesktopClient\Properties\Proxies.lsml" Checksum="76D7025328D5669566247BEF4C3E22A58B4A98C7B941CB9CC3A8718A00BFD306" />
+  </Documents>
+</ModelDocumentManifest>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Documents>
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Properties\Client.lsml" Checksum="113F894FD1BBD39D2A5C8A23ADAB2C49D62BD3A61BA2985758158F1D8333DADF" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Properties\Proxies.lsml" Checksum="593031037D3D1BFFB8C34C623B313E6049294D0BAB650D44AB1B41FBFC493B99" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\AddEditAssociatedRisk.lsml" Checksum="E94F6A53A0E1A379222D57690475C3C39AB65A3A6D691D764D3770B7D4CB517C" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\AddEditChangeQualification.lsml" Checksum="5ACC9DF31A4FD580EBDC0D69735B98A5EADA6E25E762D79A1097DAE00E786011" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\AddEditChangeQualificationAction.lsml" Checksum="6F3EB6A516EE55E697DC686A1CF2387F81BBAA2D941851DADD4BD82E7B9E6E95" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\AddEditChangeRequest.lsml" Checksum="5823744950379A1D208A6AF11E11753F105A1BBFB3B7F1D873F971D2A965865E" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\AddEditChangeRequestStatus.lsml" Checksum="4609B0552D6AC66FCF763F97F92E3D2F2768ECFD4D420E276255F08149407311" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\AddEditEmployee.lsml" Checksum="F43EF61FC62C3F1BA4E8D4D3E3EC9DB4C488D8E65C99BA10B7E74327BC8EF565" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\BrowseChangeRequests.lsml" Checksum="CFD7E7E174417F53F81051729719296B6777CB3CDB4DD520C411F7C0A85A004E" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\BrowseChangeRequestStatuses.lsml" Checksum="DF43374652EFBDD697C3318690BF7A86D7D70DF200C762A64EA888F5861516DA" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\BrowseEmployees.lsml" Checksum="89647ACA8077A1CC6AB495C88BF24A2C343ACBF9A1CF652C13678CCB96F3358A" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\BrowseMyAssignedRisks.lsml" Checksum="F437353536C26CE4672A7E88C2B3B946ED09DDC32DD4D2483DC768F4B1F72731" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\BrowseMyChangeQualificationActions.lsml" Checksum="683C266020B1B105723AC9EA45596403A6F0013F3D22CB326529A6F20442C4DA" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\BrowseMyChangeQualifications.lsml" Checksum="805E67C002AC37AD76A88B305A7731D7C41DFDD809472FF18D7A8E610F0FCD1D" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\BrowseMyChangeRequests.lsml" Checksum="05C275267E355D865E71D70CE5B70E24300D3641772504FE7C3F3F297AFE12BA" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\Home.lsml" Checksum="5F7D1B897A19C0394DEA7E951BC7B7EE2315F7AF3B7DFD0B7207F333E2D514C5" />
+    <Document FullPath="C:\BitBucket\ChangeManagerApp\ChangeManagerApp\ChangeManagerApp.HTMLClient\Screens\MobileHome.lsml" Checksum="702D72998A9966CBDDB1633EB48F0A903D0F41B035D8F74CABDCEE6A46A7D9B5" />
+  </Documents>
+</ModelDocumentManifest>
